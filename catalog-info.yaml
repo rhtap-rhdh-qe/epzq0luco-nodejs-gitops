@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: epzq0luco-nodejs-gitops
+  description: This is GitOps manifest for epzq0luco-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=epzq0luco-nodejs
+    backstage.io/kubernetes-id: epzq0luco-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: epzq0luco-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:epzq0luco-nodejs
